@@ -1,0 +1,30 @@
+apiVersion: v1
+baseDomain: valensas.com
+metadata:
+  name: cloud
+
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 0
+
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/24 
+    hostPrefix: 23 
+  networkType: OpenShiftSDN
+  serviceNetwork: 
+  - 172.30.0.0/24
+
+platform:
+  none: {}
+
+fips: false
+
+pullSecret: '{"auths":{"fake":{"auth": "bar"}}}' 
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIuDYX/KWNslf73ZLudGL1sM6TGPJCJnpbhVQHR1rQDuVVJwDupIeN93oy6bU0qKZ2J1ACNXu5PYnNTYq6eihvuzzNJ+3V78MRXM2vOtntmFYPa3XuOwgo3ZHaCm2rnzPJTbbPh9DkH/pTQwHCRLvMOQ2cyEg+Sv+AjTIXZOAh2RwQoRkt3xVxRFMZjqbemsSiDLipeAbbCqyOggwOGH4KyvWoAaWWelREeVawwxzThKVoiBk0vDUlxQAwId1hfRHA/HLhIfP7cLXHTxk93/EI1GpJury02PAhjG5Z6wC7NwQHF7k+NijqaG8JgpxnK2q3yMek81JJUKZXrenCo0AOxNDDwVd1DUTTQ8F0PmlohCia4q0NLre/uIwiVHMMNOFCsuDSisTj+Ooy/yIPlboUIb17QGbDfaSBapTm+s3w59avpt6DFYLpHuV9uW1FQrPyNFn/4hrrJbUpYNXjvF9Rq8G3YR8jrrQT4X/9HpVcAfuJgH2lCyYrpdpL68FkMms= root@api-int.cloud.valensas.com'

@@ -1,0 +1,9 @@
+zone "valensas.com" {
+    type master;
+    file "/etc/named/zones/db.valensas.com"; # zone file path
+};
+
+zone "53.34.10.in-addr.arpa" {
+    type master;
+    file "/etc/named/zones/db.10.34.53";  # 10.34.53.0/24 subnet
+};

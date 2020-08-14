@@ -1,0 +1,25 @@
+$TTL    604800
+@       IN      SOA     okd4-services.valensas.com. admin.valensas.com. (
+                  9     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Negative Cache TTL
+)
+
+; name servers - NS records
+    IN      NS      okd4-services.valensas.com.
+
+; name servers - PTR records
+10    IN    PTR    okd4-services.valensas.com.
+
+; OpenShift Container Platform Cluster - PTR records
+16    IN    PTR    okd4-bootstrap.cloud.valensas.com.
+20    IN    PTR    okd4-master-0.cloud.valensas.com.
+21    IN    PTR    okd4-master-1.cloud.valensas.com.
+22    IN    PTR    okd4-master-2.cloud.valensas.com.
+100    IN    PTR    okd4-worker-0.cloud.valensas.com.
+101    IN    PTR    okd4-worker-1.cloud.valensas.com.
+102    IN    PTR    okd4-worker-2.cloud.valensas.com.
+10    IN    PTR    api.cloud.valensas.com.
+10    IN    PTR    api-int.cloud.valensas.com.
